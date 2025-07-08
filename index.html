@@ -2,54 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sha — My Kanmani</title>
+  <title>My Kanmani 💖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://emojiapi.dev/api/v1/heart_eyes/128.png">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
     body {
-      background: #FFF5F8;
-      font-family: 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      font-family: 'Courgette', cursive;
+      background: linear-gradient(to bottom right, #ffe0ec, #fff3f9);
+      color: #d63384;
       text-align: center;
-      padding: 40px 20px;
+      padding: 30px 20px;
+      overflow-x: hidden;
     }
 
     h1 {
-      color: #E91E63;
       font-size: 24px;
       margin-bottom: 30px;
+      animation: fadeIn 2s ease-in-out;
     }
 
     button {
       display: block;
       width: 80%;
       max-width: 300px;
-      margin: 12px auto;
-      padding: 14px;
+      margin: 14px auto;
+      padding: 15px;
       font-size: 18px;
-      background: #FFCCD5;
+      background: #ffd6e0;
       border: none;
-      border-radius: 25px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      cursor: pointer;
+      border-radius: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      color: #b8005c;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ffbad2;
+      transform: scale(1.05);
     }
 
     footer {
       margin-top: 40px;
-      font-size: 14px;
-      color: #777;
+      font-size: 15px;
+      color: #8e145c;
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .hearts span {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: url('https://emojiapi.dev/api/v1/heart/128.png') no-repeat center center/contain;
+      animation: float 8s infinite ease-in;
+      opacity: 0.5;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <h1>“Enna aanalum unakaga naan un kooda irupan. Love you infinite ❤️💋”</h1>
+  <h1>
+    Enna aanalum unakaga naan un kooda irupan. Love you infinite ❤️💋
+  </h1>
 
-  <button onclick="alert('🫂 Enta va… naan kooda irukan')">Feeling Low?</button>
-  <button onclick="alert('En mela saanjuka')">Overthinking?</button>
-  <button onclick="alert('Anachukka ethunalum paathukalam ❤️')">Too Many Thoughts?</button>
+  <button onclick="alert('Enta va… naan kooda irukan, naan paathukuren 🫂')">Need a Hug?</button>
+  <button onclick="alert('En mela saanjuka')">Feeling Low?</button>
+  <button onclick="alert('Anachukka ethunalum paathukalam ❤️')">Overthinking?</button>
   <button onclick="alert('Nenapu irukka kaamba killi retham vanthuchey gaaji pondati ma 😂')">Need to Smile?</button>
   <button onclick="alert('I love you infinite. Just you, Alisha 💖')">Want to Hear the Truth?</button>
 
   <footer>Always yours — Mohamed Imthiyas 🫂💋❤️</footer>
+
+  <div class="hearts">
+    <!-- Generate hearts using JS -->
+  </div>
+
+  <script>
+    const heartContainer = document.querySelector('.hearts');
+    for (let i = 0; i < 30; i++) {
+      const span = document.createElement('span');
+      span.style.left = Math.random() * 100 + 'vw';
+      span.style.animationDuration = (5 + Math.random() * 5) + 's';
+      span.style.animationDelay = Math.random() * 5 + 's';
+      heartContainer.appendChild(span);
+    }
+  </script>
 
 </body>
 </html>
