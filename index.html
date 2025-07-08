@@ -6,49 +6,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="https://emojiapi.dev/api/v1/heart_eyes/128.png">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Pacifico&display=swap');
 
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Courgette', cursive;
-      background: linear-gradient(to bottom right, #ffe0ec, #fff3f9);
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to bottom right, #ffd9ec, #ffeef8);
       color: #d63384;
       text-align: center;
       padding: 30px 20px;
       overflow-x: hidden;
+      background-image: url('https://www.transparenttextures.com/patterns/hearts.png');
     }
 
     h1 {
-      font-size: 24px;
+      font-size: 26px;
       margin-bottom: 30px;
       animation: fadeIn 2s ease-in-out;
+      color: #b30059;
     }
 
     button {
       display: block;
       width: 80%;
-      max-width: 300px;
+      max-width: 320px;
       margin: 14px auto;
-      padding: 15px;
+      padding: 16px;
       font-size: 18px;
-      background: #ffd6e0;
+      background: #ffb6d9;
       border: none;
-      border-radius: 30px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      color: #b8005c;
-      transition: 0.3s;
+      border-radius: 35px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      color: #7a0043;
+      transition: 0.4s;
+      cursor: pointer;
     }
 
     button:hover {
-      background-color: #ffbad2;
-      transform: scale(1.05);
+      background-color: #ff9fcb;
+      transform: scale(1.08);
     }
 
     footer {
-      margin-top: 40px;
-      font-size: 15px;
+      margin-top: 50px;
+      font-size: 16px;
       color: #8e145c;
+      animation: fadeIn 2s ease-in 1s forwards;
     }
 
     .hearts {
@@ -63,11 +67,11 @@
 
     .hearts span {
       position: absolute;
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       background: url('https://emojiapi.dev/api/v1/heart/128.png') no-repeat center center/contain;
       animation: float 8s infinite ease-in;
-      opacity: 0.5;
+      opacity: 0.6;
     }
 
     @keyframes float {
@@ -88,12 +92,17 @@
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    audio {
+      display: none;
+    }
   </style>
 </head>
 <body>
 
   <h1>
-    Enna aanalum unakaga naan un kooda irupan. Love you infinite ❤️💋
+    Enna aanalum unakaga naan un kooda irupan. Love you infinite ❤️💋<br>
+    My moon, my Kanmani 🌙
   </h1>
 
   <button onclick="alert('Enta va… naan kooda irukan, naan paathukuren 🫂')">Need a Hug?</button>
@@ -102,18 +111,23 @@
   <button onclick="alert('Nenapu irukka kaamba killi retham vanthuchey gaaji pondati ma 😂')">Need to Smile?</button>
   <button onclick="alert('I love you infinite. Just you, Alisha 💖')">Want to Hear the Truth?</button>
 
-  <footer>Always yours — Mohamed Imthiyas 🫂💋❤️</footer>
+  <footer>
+    Always yours — Mohamed Imthiyas 🫂💋❤️<br>
+    This page will love you even when you're offline 💞
+  </footer>
 
-  <div class="hearts">
-    <!-- Generate hearts using JS -->
-  </div>
+  <div class="hearts"></div>
+
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/04/15/audio_d8df0d1315.mp3?filename=romantic-piano-144995.mp3" type="audio/mpeg">
+  </audio>
 
   <script>
     const heartContainer = document.querySelector('.hearts');
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 40; i++) {
       const span = document.createElement('span');
       span.style.left = Math.random() * 100 + 'vw';
-      span.style.animationDuration = (5 + Math.random() * 5) + 's';
+      span.style.animationDuration = (6 + Math.random() * 5) + 's';
       span.style.animationDelay = Math.random() * 5 + 's';
       heartContainer.appendChild(span);
     }
